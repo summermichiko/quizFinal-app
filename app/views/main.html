@@ -1,0 +1,47 @@
+<!-- MainCtrl is this entire file and is linked here through routes and holds YellCtrl and QuizCtrl in it -->
+<div ng-controller="YellCtrl">
+  <h2>{{timeLeft}} seconds remaining!</h2>
+  <button ng-show="!isRunning" ng-click="startTimer()">Start</button>
+  <button ng-show="isRunning" ng-click="pauseTimer()">Pause</button>
+  <button ng-click="restartTimer()">Restart</button>
+</div>
+<div class="container" ng-controller="QuizCtrl"> 
+<h2>Your score is: {{ score.value }}</h2>
+<h2>{{ message }}</h2>
+  <div class="jumbotron new-question">
+    <h2>Create a New Question</h2>
+
+    <label>Question: </label>
+    <input type="text" ng-model="newQuestion.q"><br>
+
+    <label>Options: </label>
+    <!-- <input ng-repeat="option in newQuestion.options" type="text" ng-model="option.value"><br> -->
+    <input type="radio">
+    <input type="text">
+    <button ng-click="deleteOption($index)">Delete</button><br>
+    <button ng-click="addOption()">Add Option</button><br><br>
+
+    
+    <!-- <label>Answer: </label>
+    <input type="text" ng-model="newQuestion.answer"><br>
+    
+    <label>Difficulty: </label>
+    <input type="text" ng-model="newQuestion.difficulty"><br> -->
+
+    <button ng-click="addQuestion()">Add Question</button>
+
+  </div>
+  <div class="jumbotron question" ng-repeat="question in quiz | orderBy: 'difficulty' ">
+    <form action="">
+    <h2>{{ $index + 1 }}. {{ question.q }}</h2>
+      <button ng-click="checkAnswer(option.value, question)" ng-disabled="question.answered" ng-repeat="option in question.options">{{ option.value }}</button>
+    </form>
+  </div>
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+<!--<script src="../../dist/js/bootstrap.min.js"></script>-->
