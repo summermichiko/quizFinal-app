@@ -1,12 +1,175 @@
-body {
-  padding-top: 70px;
+.container a {
+	display: block;
 }
 
-h2 {
-	font-size: 25px;
-	padding-bottom: 10px;
+.title {
+	font-family: Lobster;
+	font-size: 58px;
+	color: #242424;
+	position: fixed;
+	margin-top: 30px;
+}
+
+.title:hover {
+	color: #E34093;
 }
 
 .jumbotron {
 	padding-bottom: 70px;
+	margin-left: 300px;
+	background-color: #eee;
+	margin-top: 30px;
 }
+
+.createSec {
+	font-size: 20px;
+	font-family: Lato;
+	font-weight: 300;
+	text-transform: uppercase;
+	position: fixed;
+	color: #333;
+	margin-top: 130px;
+	margin-left: 3px;
+	text-align: center;
+}
+
+.createSec:hover {
+	color: #E34093;
+}
+
+h2 {
+	font-size: 20px;
+	font-family: Lato;
+	font-weight: 300;
+	line-height: 7px;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 20px;
+	font-family: Lato;
+	font-weight: 300;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+button {
+	background-color: #FFF;
+	border: 1px solid #bbb;
+	padding: 8px;
+	font-family: Lato;
+	text-transform: uppercase;
+}
+
+button:hover {
+	background-color: #E34093;
+	color: #fff;
+}
+
+.timerSec {
+	margin-top: 100px;
+	margin-left: 12px;
+	position: fixed;
+	text-align: center;
+}
+
+.timeLeftSec {
+	margin-top: 235px;
+	margin-left: 23px;
+	position: fixed;
+}
+
+.scoreSec {
+	position: fixed;
+	margin-top: 453px;
+	margin-left: 50px;
+	left: 113px;
+	text-align: center;	
+}
+
+.menuOption {
+	font-size: 20px;
+	font-family: Lato;
+	font-weight: 300;
+	text-transform: uppercase;
+	position: fixed;
+	color: black;
+	margin-top: 130px;
+	margin-left: 35px;
+	text-align: center;
+}
+
+.menuOption:hover {
+	color: #E34093;
+}
+
+.createTitle {
+	margin-top: 32px;
+	margin-bottom: 30px;
+}
+
+label {
+	font-family: Lato;
+	text-transform: uppercase;
+}
+
+.submitBtn {
+	background-color: #FFF;
+	border: 1px solid #bbb;
+	padding: 8px;
+	font-family: Lato;
+	text-transform: uppercase;
+}
+
+.submitBtn:hover {
+	background-color: #E34093;
+	color: #fff; 
+}
+
+.questionInput {
+	margin-left: 10px;
+	padding-left: 10px;
+	width: 615px;
+	height: 35px;
+	border: none;
+	border-radius: 3px;
+	font-family: Lato;
+}
+
+.optionInput {
+	width: 240px;
+	height: 35px;
+	border: none;
+	border-radius: 3px;
+	font-family: lato;
+	padding-left: 10px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.errorMessage {
+	color: #E34093;
+	font-family: Lato;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

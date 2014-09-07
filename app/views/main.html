@@ -1,17 +1,30 @@
 <!-- MainCtrl is this entire file and is linked here through routes and holds YellCtrl and QuizCtrl in it -->
-<div ng-controller="YellCtrl">
-  <h2>{{timeLeft}} seconds remaining!</h2>
-  <button ng-show="!isRunning" ng-click="startTimer()">Start</button>
-  <button ng-show="isRunning" ng-click="pauseTimer()">Pause</button>
-  <button ng-click="restartTimer()">Restart</button>
+<a href="#/new_question" class="createSec">Create Question</a>
+
+<div ng-controller="YellCtrl" class="timerSec">
+  <div class="timerSec">
+    <h2>Timer</h2>
+    <button ng-show="!isRunning" ng-click="startTimer()">Start</button>
+    <button ng-show="isRunning" ng-click="pauseTimer()">Pause</button>
+    <button ng-click="restartTimer()">Restart</button>
+  </div>
+
+
+  <div class="timeLeftSec">
+    <h2>Time left:</h2>
+    <h2>{{timeLeft}} seconds</h2>
+  </div>
+
 </div>
-<div class="container" ng-controller="QuizCtrl"> 
-<h2>Your score is: {{ score.value }}</h2>
+<div ng-controller="QuizCtrl"> 
+  <div class="scoreSec">
+    <h2>Score: {{ score.value }}</h2>
+  </div>
 <!-- <h2>{{ message }}</h2> -->
   
-  <div class="jumbotron question" ng-repeat="question in quiz | orderBy: 'difficulty' ">
+  <div class="jumbotron" ng-repeat="question in quiz">
     <form action="">
-    <h2>{{ $index + 1 }}. {{ question.q }}</h2>
+    <h3>{{ question.q }}</h3>
       <button ng-click="checkAnswer(option.value, question)" ng-disabled="question.answered" ng-repeat="option in question.options">{{ option.value }}</button>
     </form>
   </div>

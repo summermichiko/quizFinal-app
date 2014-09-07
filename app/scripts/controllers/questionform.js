@@ -22,6 +22,7 @@ angular.module('quizFinalApp')
 	  		$scope.newQuestion.options.splice(num, 1);
 	  	};
 
+	  	// submitting new question
 		$scope.formSubmit = function() {
 			$http.post('http://localhost:3000/new_question', {
 				newQuestion: $scope.newQuestion})
@@ -31,7 +32,7 @@ angular.module('quizFinalApp')
 						$scope.quiz = data;
 					});
 			});
-			$location('/');
+			$location.path('/');
 		};
 
 		$scope.$watchCollection("newQuestion.options", function(newVal, oldVal) {

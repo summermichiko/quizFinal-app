@@ -63,19 +63,14 @@ angular.module('quizFinalApp')
   		$scope.scopeName = "MainCtrl";
 
 	  	$scope.addQuestion = function() {
-	  		$scope.newQuestion.difficulty = +$scope.newQuestion.difficulty;
-	  		$scope.quiz.push($scope.newQuestion);
+	  		// $scope.newQuestion.difficulty = +$scope.newQuestion.difficulty;
 	  		$scope.newQuestion = { options: [] };
 	  	};
 
 	  	$scope.checkAnswer = function(selectedValue, question) {
 	  		if(selectedValue === question.answer) {
 	  			$scope.score.value++;
-	  			$(".jumbotron").css('background-color', "green");
 	  			// $rootScope.$broadcast("messageChange", "You got it right!");
-	  		} else {
-	  			// $rootScope.$broadcast("messageChange", "Study harder, maybe next time!");
-	  			$(".jumbotron").css('background-color', "red");
 	  		}
 	  		question.answered = true;
 	  	};
