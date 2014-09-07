@@ -8,9 +8,12 @@
  * Controller of the quizFinalApp
  */
 angular.module('quizFinalApp')
-	.controller('MasterCtrl', function($scope) {
+	.controller('MasterCtrl', function($scope, $http) {
 		$scope.scopeName = "MasterCtrl";
 		$scope.score = { value: 0 };
+		$http.get('http://localhost:3000/').success(function(data) {
+			$scope.quiz = data;
+		});
 	})
 
 	.controller('YellCtrl', function($scope, $timeout, $interval) {
@@ -59,16 +62,6 @@ angular.module('quizFinalApp')
   	.controller('MainCtrl', function($scope, $rootScope) {
   		$scope.scopeName = "MainCtrl";
 
-	  	$scope.newQuestion = { options: [] };
-
-	  	$scope.addOption = function() {
-	  		$scope.newQuestion.options.push({ value: "" })
-	  	};
-
-	  	$scope.deleteOption = function() {
-	  		$scope.newQuestion.options.splice(num, 1);
-	  	};
-
 	  	$scope.addQuestion = function() {
 	  		$scope.newQuestion.difficulty = +$scope.newQuestion.difficulty;
 	  		$scope.quiz.push($scope.newQuestion);
@@ -78,9 +71,13 @@ angular.module('quizFinalApp')
 	  	$scope.checkAnswer = function(selectedValue, question) {
 	  		if(selectedValue === question.answer) {
 	  			$scope.score.value++;
+	  			$(".jumbotron").css('background-color', "green");
+	  			// $rootScope.$broadcast("messageChange", "You got it right!");
+	  		} else {
+	  			// $rootScope.$broadcast("messageChange", "Study harder, maybe next time!");
+	  			$(".jumbotron").css('background-color', "red");
 	  		}
 	  		question.answered = true;
-	  		$rootScope.$broadcast("messageChange", "You got it right!");
 	  	};
   	})
 

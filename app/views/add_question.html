@@ -1,0 +1,27 @@
+<!-- this will be rendered when QuestionFormCtrl is used -->
+<div class="jumbotron new-question">
+    <h2>Create a New Question</h2>
+    <!-- can use ng-submit or use ng-click on a button below -->
+    <form name="newQuestionForm" ng-submit="formSubmit()">
+
+        <label>Question: </label>
+        <input type="text" name="q" ng-model="newQuestion.q" ng-minlength="5" required>
+        <span class="alert-sm alert-danger" ng-show="newQuestionForm.q.$error.minlength">Your question must be at least 5 characters long.</span><br>
+        <span class="alert-sm alert-danger" ng-show="newQuestionForm.q.$dirty && newQuestionForm.q.$error.required">You must enter a question.</span><br>
+
+        <label>Options: </label>
+        <span class="alert-sm alert-danger" ng-show="newQuestionForm.correctAnswer.$error.required">You must indicate a correct answer.</span>
+        <span class="alert-sm alert-danger" ng-show="newQuestionForm.$error.enough_options">At least two options are required.</span><br>
+    
+        <div ng-repeat="option in newQuestion.options">
+            <input type="radio" name="correctAnswer" ng-model="newQuestion.answer" value="{{option.value}}" required>
+            <input type="text" ng-model="option.value">
+            <button ng-click="deleteOption($index)">Delete</button><br>
+        </div><br>
+
+        <button ng-click="addOption($event)">Add Option</button><br><br>
+        <input type="submit"></input>
+    
+    </form>
+
+</div>

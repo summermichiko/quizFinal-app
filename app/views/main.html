@@ -7,30 +7,8 @@
 </div>
 <div class="container" ng-controller="QuizCtrl"> 
 <h2>Your score is: {{ score.value }}</h2>
-<h2>{{ message }}</h2>
-  <div class="jumbotron new-question">
-    <h2>Create a New Question</h2>
-
-    <label>Question: </label>
-    <input type="text" ng-model="newQuestion.q"><br>
-
-    <label>Options: </label>
-    <!-- <input ng-repeat="option in newQuestion.options" type="text" ng-model="option.value"><br> -->
-    <input type="radio">
-    <input type="text">
-    <button ng-click="deleteOption($index)">Delete</button><br>
-    <button ng-click="addOption()">Add Option</button><br><br>
-
-    
-    <!-- <label>Answer: </label>
-    <input type="text" ng-model="newQuestion.answer"><br>
-    
-    <label>Difficulty: </label>
-    <input type="text" ng-model="newQuestion.difficulty"><br> -->
-
-    <button ng-click="addQuestion()">Add Question</button>
-
-  </div>
+<!-- <h2>{{ message }}</h2> -->
+  
   <div class="jumbotron question" ng-repeat="question in quiz | orderBy: 'difficulty' ">
     <form action="">
     <h2>{{ $index + 1 }}. {{ question.q }}</h2>

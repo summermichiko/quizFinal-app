@@ -8,7 +8,7 @@
  * Controller of the quizFinalApp
  */
 angular.module('quizFinalApp')
-  .controller('MessagesCtrl', function ($scope) {
+  .controller('MessagesCtrl', function($scope) {
     $scope.scopeName = "MessagesCtrl";
     $scope.$on("messageChange", function(event, newMsg) {
     	$scope.message = newMsg;
